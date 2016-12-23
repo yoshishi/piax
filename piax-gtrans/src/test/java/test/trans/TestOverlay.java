@@ -34,6 +34,7 @@ import org.piax.gtrans.ReceivedMessage;
 import org.piax.gtrans.RemoteValue;
 import org.piax.gtrans.TransOptions;
 import org.piax.gtrans.Transport;
+import org.piax.gtrans.netty.NettyLocator;
 import org.piax.gtrans.ov.Overlay;
 import org.piax.gtrans.ov.OverlayListener;
 import org.piax.gtrans.ov.OverlayReceivedMessage;
@@ -44,7 +45,6 @@ import org.piax.gtrans.ov.llnet.LLNet;
 import org.piax.gtrans.ov.sg.MSkipGraph;
 import org.piax.gtrans.ov.szk.Suzaku;
 import org.piax.gtrans.raw.tcp.TcpLocator;
-import org.piax.gtrans.raw.udp.UdpLocator;
 import org.piax.util.KeyComparator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -75,11 +75,11 @@ public class TestOverlay {
         // base transport
         PeerLocator loc;
         ChannelTransport<?> bt1 = p1.newBaseChannelTransport("udp",
-                loc = new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                loc = new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt2 = p2.newBaseChannelTransport("udp",
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt3 = p3.newBaseChannelTransport("udp",
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
 
         // top level
         Overlay<GeoRegion, Location> tr1, tr2, tr3;
@@ -181,11 +181,11 @@ public class TestOverlay {
         // base transport
         PeerLocator loc;
         ChannelTransport<?> bt1 = p1.newBaseChannelTransport(null, new TransportId("udp1"),
-                loc = new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                loc = new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt2 = p2.newBaseChannelTransport(null, new TransportId("udp1"),
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt3 = p3.newBaseChannelTransport(null, new TransportId("udp1"),
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
 
         // top level
         Overlay<GeoRegion, Location> tr1, tr2, tr3;
@@ -290,11 +290,11 @@ public class TestOverlay {
         // base transport
         PeerLocator loc;
         ChannelTransport<?> bt1 = p1.newBaseChannelTransport(
-                loc = new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                loc = new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt2 = p2.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt3 = p3.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
 
         // top level
         Overlay<Key, Key> tr1, tr2, tr3;
@@ -406,11 +406,11 @@ public class TestOverlay {
         // base transport
         PeerLocator loc;
         ChannelTransport<?> bt1 = p1.newBaseChannelTransport(
-                loc = new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                loc = new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt2 = p2.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt3 = p3.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
 
         // top level
         Overlay<Key, Key> tr1, tr2, tr3;
@@ -514,11 +514,11 @@ public class TestOverlay {
         // base transport
         PeerLocator loc;
         ChannelTransport<?> bt1 = p1.newBaseChannelTransport(
-                loc = new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                loc = new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt2 = p2.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt3 = p3.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
 
         // top level
         Overlay<LowerUpper, DoubleKey> ov1, ov2, ov3;
@@ -635,11 +635,11 @@ public class TestOverlay {
         // base transport
         PeerLocator loc;
         ChannelTransport<?> bt1 = p1.newBaseChannelTransport(
-                loc = new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                loc = new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt2 = p2.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt3 = p3.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
 
         // top level
         Overlay<LowerUpper, DoubleKey> ov1, ov2, ov3;
@@ -750,11 +750,11 @@ public class TestOverlay {
         // base transport
         PeerLocator loc;
         ChannelTransport<?> bt1 = p1.newBaseChannelTransport(
-                loc = new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                loc = new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt2 = p2.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt3 = p3.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
 
         // top level
         Overlay<Destination, Key> tr1, tr2, tr3;
@@ -858,11 +858,11 @@ public class TestOverlay {
         // base transport
         PeerLocator loc;
         ChannelTransport<?> bt1 = p1.newBaseChannelTransport(
-                loc = new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                loc = new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt2 = p2.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt3 = p3.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
 
         // top level
         CombinedOverlay tr1, tr2, tr3;
@@ -969,11 +969,11 @@ public class TestOverlay {
         // base transport
         PeerLocator loc;
         ChannelTransport<?> bt1 = p1.newBaseChannelTransport(
-                loc = new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                loc = new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt2 = p2.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt3 = p3.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
 
         // top level
         CombinedOverlay tr1, tr2, tr3;
@@ -1143,11 +1143,11 @@ public class TestOverlay {
         // base transport
         PeerLocator loc;
         ChannelTransport<?> bt1 = p1.newBaseChannelTransport(
-                loc = new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                loc = new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt2 = p2.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
         ChannelTransport<?> bt3 = p3.newBaseChannelTransport(
-                new UdpLocator(new InetSocketAddress("localhost", portNumber++)));
+                new NettyLocator(new InetSocketAddress("localhost", portNumber++)));
 
         // top level
         CombinedOverlay co1, co2, co3;
@@ -1304,13 +1304,13 @@ public class TestOverlay {
 
     @Test
     public void SuzakuRoutingTableTest() throws Exception {
-        int numOfPeers = 50;
+        int numOfPeers = 32;
         // get peers
         PeerLocator loc = null;
         Suzaku<Destination, ComparableKey<?>> trs[] = new Suzaku[numOfPeers];
         Peer peers[] = new Peer[numOfPeers];
         for (int i = 0; i < numOfPeers; i++) {
-            PeerLocator l = new TcpLocator(new InetSocketAddress(
+            PeerLocator l = new NettyLocator(new InetSocketAddress(
                     "localhost", 12367 + i));
             if (loc == null) {
                 loc = l; // remember for seed;
@@ -1380,13 +1380,13 @@ public class TestOverlay {
     
     @Test
     public void MSGRoutingTableTest() throws Exception {
-        int numOfPeers = 50;
+        int numOfPeers = 32;
         // get peers
         PeerLocator loc = null;
         MSkipGraph<Destination, ComparableKey<?>> trs[] = new MSkipGraph[numOfPeers];
         Peer peers[] = new Peer[numOfPeers];
         for (int i = 0; i < numOfPeers; i++) {
-            PeerLocator l = new TcpLocator(new InetSocketAddress(
+            PeerLocator l = new NettyLocator(new InetSocketAddress(
                     "localhost", 12367 + i));
             if (loc == null) {
                 loc = l; // remember for seed;
